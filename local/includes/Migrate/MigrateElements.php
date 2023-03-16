@@ -153,24 +153,6 @@ class MigrateElements{
         }
     }
 
-/**
- */
-public function addElementOld()
-{
-    foreach ($this->elements as $element) {
-        $fields = array_replace_recursive(self::DEFAULTS, $element);
-        $fields['IBLOCK_ID'] = $this->iBlockId;
-        $ib = new CIBlockElement;
-        $id = $ib->Add($fields);
-
-        if ($id) {
-            $this->success[$id] = $fields['NAME'];
-        } else {
-            $this->errors[$fields['NAME']] = $ib->LAST_ERROR;
-        }
-    }
-}
-
 
     /**
      * @return string
