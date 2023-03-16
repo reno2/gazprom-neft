@@ -1,0 +1,13 @@
+.htaccess
+favicon.ico
+robots.txt
+/bitrix
+/upload
+.idea
+/include/
+!/offices
+!/local
+/.idea
+/.htaccess
+/.access.php
+/*.php
