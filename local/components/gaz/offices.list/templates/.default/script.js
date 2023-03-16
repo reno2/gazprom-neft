@@ -65,7 +65,7 @@ class YaMaps {
             });
             this.mapInctance.geoObjects.add(this.objectManager);
 
-            this.addCostomBallonTpl()
+            this.addCustomBalloonTpl()
 
             this.addObjects()
 
@@ -76,7 +76,7 @@ class YaMaps {
     }
 
 
-    addCostomBallonTpl() {
+    addCustomBalloonTpl() {
 
         const MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
             '<div class="map-balloon">' +
@@ -161,7 +161,6 @@ class YaMaps {
 
     addObjects() {
 
-        const t = []
         for (const item of this.dataObj.ITEMS) {
 
             const key = `${this.mapId}_${item.ID}`
