@@ -4,7 +4,7 @@ class YaMaps {
     center = []
     zoom = null
     dataObj = {}
-    mapInctance = null
+    mapInstance = null
     objectManager = null
     mapId = null
     placemarks = {}
@@ -26,12 +26,11 @@ class YaMaps {
         this.zoom = this.dataObj.ZOOM || 12
         this.rootElement = mapElement
         this.marker = this.dataObj.MARKER
-
         this.initYaMap()
-
     }
-    openballon({target}){
-        const root = target.closest('.js_ballon__open')
+
+    openBalloon({target}){
+        const root = target.closest('.js_balloon__open')
         const placemarkId = root.dataset.placemarkid
         const balloonId = this.placemarks[placemarkId].id
         this.objectManager.objects.balloon.open(balloonId)
@@ -43,7 +42,7 @@ class YaMaps {
 
         rootDiv.querySelectorAll(dataset.openhandler).forEach(el => {
             el.addEventListener('click', (evn) => {
-                this.openballon.call(this, evn)
+                this.openBalloon.call(this, evn)
             })
         })
 
@@ -52,7 +51,7 @@ class YaMaps {
     initYaMap() {
 
         ymaps.ready(() => {
-            this.mapInctance = new ymaps.Map(this.rootElement, {
+            this.mapInstance = new ymaps.Map(this.rootElement, {
                 center: this.center,
                 zoom: this.zoom,
             }, {
@@ -63,7 +62,7 @@ class YaMaps {
                 clusterize: false,
                 clusterDisableClickZoom: true,
             });
-            this.mapInctance.geoObjects.add(this.objectManager);
+            this.mapInstance.geoObjects.add(this.objectManager);
 
             this.addCustomBalloonTpl()
 

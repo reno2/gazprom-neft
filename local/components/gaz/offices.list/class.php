@@ -65,7 +65,8 @@ class OfficesList extends CBitrixComponent
 
         if ($this->cache->initCache($cacheTtl, $cacheKey, $cachePath)) {
             // Получаем из кеша
-            $this->arResult['ELEMENTS'] = $this->cache->getVars();
+            $this->arResult = $this->cache->getVars();
+
         } elseif ($this->cache->startDataCache()) {
             $this->getIBlockElements();
             $this->taggedCache->startTagCache($cachePath);
@@ -77,7 +78,10 @@ class OfficesList extends CBitrixComponent
                 $this->cache->abortDataCache();
             }
             // Добавляем в кеш
-            $this->cache->endDataCache($this->arResult['ELEMENTS']);
+            $this->cache->endDataCache([
+                'ELEMENTS' => $this->arResult['ELEMENTS'],
+                'MAP_ID'   => $this->arResult['MAP_ID']]
+            );
         }
     }
 

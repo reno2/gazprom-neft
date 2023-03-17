@@ -25,11 +25,11 @@ if (!$arResult['ELEMENTS']) {
 
 
 <div class="container">
-    <div class="offices-block js_map__<?= $arResult["MAP_ID"] ?>" data-openhandler=".js_ballon__open">
+    <div class="offices-block js_map__<?= $arResult["MAP_ID"] ?>" data-openhandler=".js_balloon__open">
         <div class="offices-block__list">
             <?
             foreach ($arResult['ELEMENTS'] as $office) : ?>
-                <div class="offices-block__item js_ballon__open" data-placemarkid='<?="{$arResult["MAP_ID"]}_{$office['ID']}" ?>'>
+                <div class="offices-block__item js_balloon__open" data-placemarkid='<?="{$arResult["MAP_ID"]}_{$office['ID']}" ?>'>
                     <div class="offices-block__inner">
                         <h5 class="offices-block__title"><?= $office['NAME'] ?></h5>
                         <div class="offices-block__phone"><?= $office['PHONE'] ?></div>

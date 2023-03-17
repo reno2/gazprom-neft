@@ -111,6 +111,32 @@
     top: 16px;
     right: 16px;
 }
+.map-balloon__arrow {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    bottom: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-width: 11px;
+}
+.map-balloon__arrow::after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 10px;
+    content: "";
+    bottom: -10px;
+    margin-left: -10px;
+    border-top-color: #fff;
+    border-bottom-width: 0;
+}
 
 @media (max-width: 600px) {
     .map-balloon{
@@ -126,7 +152,7 @@
     .map-balloon__content {
         max-width: 205px;
     }
-    .map-balloon__content map-balloon__close {
+    .map-balloon__content .map-balloon__close {
         display: none;
     }
 }
