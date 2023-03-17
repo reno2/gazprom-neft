@@ -138,22 +138,4 @@
     border-bottom-width: 0;
 }
 
-@media (max-width: 600px) {
-    .map-balloon{
-        max-width: 225px;
-        padding: 16px 8px 12px 12px;
-    }
-    .map-balloon .balloon__title {
-        max-width: 185px;
-        margin-bottom: 4px;
-        font-size: 15px;
-        line-height: 1;
-    }
-    .map-balloon__content {
-        max-width: 205px;
-    }
-    .map-balloon__content .map-balloon__close {
-        display: none;
-    }
-}
 /* endregion balloon */
